@@ -1,0 +1,32 @@
+{
+  "name": "my-glitch-app",
+  "version": "0.0.1",
+  "description": "What am I about?",
+  "scripts": {
+    "start": "start-storybook -p 3000 -c .storybook"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "@storybook/react": "^3.2.12",
+    "babel-core": "^6.26.0",
+    "ripcity": "^1.2.6",
+    "@storybook/addon-knobs": "^3.2.12",
+    "@storybook/addon-options": "^3.2.12"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/welcome-project"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ],
+  "devDependencies": {
+    "@storybook/addon-knobs": "^3.2.12"
+  }
+}

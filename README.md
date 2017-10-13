@@ -1,2 +1,2 @@
-# ripcity-story
-Ripcity StoryBook 
+Storybook for RipCity
+=========================
