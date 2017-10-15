@@ -4,7 +4,7 @@ import RC from 'ripcity';
 import 'ripcity/dist/styles.css';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select, number } from '@storybook/addon-knobs';
 
 import {colors, backgrounds, sizes} from '../definitions';
 
@@ -49,12 +49,54 @@ stories
        })
     
     .add('Checkbox', () => { 
-        const background = select('Background Color', backgrounds, 'base');
-        const message = text("Text","Children");
-        const border = boolean('Border',true);
+        const label = text("Text","Checkbox Message");
+        const disabled = boolean('Disabled',false);
         const spacingTop = select('SpacingTop', sizes, 'base');
         const spacing = select('Spacing', sizes, 'base');
     
         return (<RC.Box><RC.GridRow spacingTop="large" textAlign="center">
-                <RC.Checkbox >{message}</RC.Checkbox></RC.GridRow></RC.Box>)
+                <RC.Checkbox disabled={disabled} label={label} /></RC.GridRow></RC.Box>)
+       })
+    .add('Radio', () => { 
+        const label = text("Text","Select Message");
+        const disabled = boolean('Disabled',false);
+        const spacingTop = select('SpacingTop', sizes, 'base');
+        const spacing = select('Spacing', sizes, 'base');
+    
+        return (<RC.Box><RC.GridRow spacingTop="large" textAlign="center">
+                <RC.RadioButton disabled={disabled} label={label} /></RC.GridRow></RC.Box>)
+       })
+    .add('TextInput', () => { 
+        const placeholder = text("Text","Select Message");
+        const inline = boolean('Inline',true);
+        const spacingTop = select('SpacingTop', sizes, 'base');
+        const spacing = select('Spacing', sizes, 'base');
+    
+        return (<RC.Box><RC.GridRow spacingTop="large" textAlign="center">
+                <RC.Text>Input:</RC.Text><RC.TextInput inline={inline} placeholder={placeholder} /></RC.GridRow></RC.Box>)
+       })
+    
+     .add('TextArea', () => { 
+        const placeholder = text("Text","Select Message");
+        const options = {
+         range: true,min: 50,
+         max: 600,
+         step: 10,
+        };
+
+      const heightCSS = number('Height', 100, options);
+
+        return (<RC.Box><RC.GridRow spacingTop="large" textAlign="center">
+                <RC.TextArea heightCss={heightCSS} placeholder={placeholder} />
+                </RC.GridRow></RC.Box>)
+       })
+          
+       .add('Search', () => { 
+        const placeholder = text("Label","Placeholder Text");
+        const inline = boolean('Inline',true);
+        const spacingTop = select('SpacingTop', sizes, 'base');
+        const spacing = select('Spacing', sizes, 'base');
+    
+        return (<RC.Box><RC.GridRow spacingTop="large" textAlign="center">
+                <RC.Search inline={inline} placeholder={placeholder} /></RC.GridRow></RC.Box>)
        })
