@@ -100,3 +100,12 @@ stories
         return (<RC.Box><RC.GridRow spacingTop="large" textAlign="center">
                 <RC.Search inline={inline} placeholder={placeholder} /></RC.GridRow></RC.Box>)
        })
+
+       .add('Slider', () => { 
+        const vertical = boolean('Vertical',false);
+        const spacingTop = select('SpacingTop', sizes, 'base');
+        const spacing = select('Spacing', sizes, 'base');
+    
+        return (<RC.Box><RC.GridRow spacingTop="large" textAlign="center">
+                <RC.Slider vertical={vertical} /></RC.GridRow></RC.Box>)
+       })
